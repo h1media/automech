@@ -1,0 +1,32 @@
+.header {
+  display: block;
+  height: 500px;
+  position: relative;
+  .logo {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .social-top {
+    display: block;
+    text-align: right;
+  }
+  .menu-holder {
+    background-color: red;
+    ul {
+      list-style-type: none;
+      text-align: center;
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      float: none;
+    }
+  }
+  .header-title {
+    position: absolute;
+    bottom:30px;
+    right: 0;
+  }
+}

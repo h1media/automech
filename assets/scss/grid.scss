@@ -1,0 +1,128 @@
+@import '_mixins.scss';
+@import '_settings.scss';
+
+$grid-columns: 12;
+$container-lg-width: 1200px;
+$container-md-width: 1000px;
+$container-sm-width: 100%;
+$container-xs-width: 100%;
+
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  max-width: $container-lg-width;
+  width: 100%;
+  margin: 0 auto;
+
+  @include tablet() {
+    max-width: $container-md-width;
+  }
+
+  @include sm() {
+    max-width: $container-sm-width;
+  }
+
+  @include phone() {
+    max-width: $container-xs-width;
+  }
+}
+
+.row {
+  @extend %clearfix;
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .col-#{$class}-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .col-#{$class}-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .col-#{$class}-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .col-#{$class}-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .col-#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-#{$class}-#{$i}";
+  }
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}
+
+@include make-grid(xs);
+
+@media (min-width: $xs + 1) {
+  @include make-grid(sm);
+}
+
+@media (min-width: $sm + 1) {
+  @include make-grid(md);
+}
+
+@media (min-width: $md + 1) {
+  @include make-grid(lg);
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+.padding {
+  @include tablet {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.margin {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.margin-left {
+  margin-left: 16px;
+}
+
+.margin-right {
+  margin-left: 16px;
+}
