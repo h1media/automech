@@ -19,17 +19,26 @@
 		<?php } ?>
         </div>
 		<section class="main-slider">
-		  <div class="item vimeo" data-video-start="4">
-		    <iframe class="embed-player slide-media" src="https://player.vimeo.com/video/217885864?api=1&byline=0&portrait=0&title=0&background=1&mute=1&loop=1&autoplay=0&id=217885864" width="980" height="520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		  </div>
-		  <div class="item youtube">
-		    <iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/tdwbYGe8pv8?enablejsapi=1&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=tdwbYGe8pv8&start=102" frameborder="0" allowfullscreen></iframe> 
-		  </div>
-		  <div class="item video">
-		    <video class="slide-video slide-media" loop muted preload="metadata" poster="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLSXZCakVGZWhOV00">
-		      <source src="https://player.vimeo.com/external/138504815.sd.mp4?s=8a71ff38f08ec81efe50d35915afd426765a7526&profile_id=112" type="video/mp4" />
-		    </video>
-		  </div>
+		<?php
+		if( have_rows('slide') ):
+		    while ( have_rows('slide') ) : the_row(); ?>
+				<?php
+				$video_link1 = get_sub_field( 'video_link_webm' );
+				$video_link2 = get_sub_field( 'video_ogv' );
+				$video_link3 = get_sub_field( 'video_mp4' );
+				$cover = get_sub_field( 'cover_photo' );
+				?>
+					<div class="item video">
+						<video  poster="<?php echo esc_url( $cover ); ?>" class="slide-video slide-media" loop muted preload="metadata">
+							<source src="<?php echo esc_url( $video_link1 ); ?>" type="video/webm" />
+							<source src="<?php echo esc_url( $video_link2 ); ?>" type="video/ogg" />
+							<source src="<?php echo esc_url( $video_link3 ); ?>" />
+						</video>
+					</div>
+		    <?php endwhile;
+		else :
+		endif;
+		?>
 		</section>
 			
 		</div>
