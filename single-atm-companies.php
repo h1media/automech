@@ -10,7 +10,7 @@
 		<?php } ?>
         <div class="container">
             <div class="row">
-				<?php get_template_part( 'partials/header-logo' ); ?>
+				<?php get_template_part( 'partials/header-logo-companies' ); ?>
 				<?php get_template_part( 'partials/header-social' ); ?>
             </div>
         </div>
