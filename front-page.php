@@ -43,21 +43,7 @@
 		</section>
 		</div>
 		<div class="container main-content">
-			<?php
-			$featured_text = get_field( 'atm_featured_text' );
-			$footer_text   = get_field( 'comp_footer' );
-			if ( ! empty( $featured_text ) ) { ?>
-				<div class="row featured">
-					<div class="col-12">
-						<?php echo esc_html( $featured_text ); ?>
-					</div>
-				</div>
-			<?php } ?>
-			<div class="row">
-				<div class="col-12">
-					<?php the_content(); ?>
-				</div>
-			</div>
+			<?php get_template_part( 'partials/article-body' ); ?>
 			<div class="row companies-list">
 				<div class="col-12">
 					<?php
@@ -68,13 +54,25 @@
 					$the_query = new WP_Query( $args ); ?>
 					<?php if ( $the_query->have_posts() ) : ?>
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-							<div class="row">
-								<div class="col-md-6 col-sm-12">
-
+							<div class="row company">
+								<div class="col-md-6 col-sm-12 company-left">
+									
 								</div>
-								<div class="col-md-6 col-sm-12">
-									<?php the_excerpt(); ?>
-									<a href="<?php the_permalink(); ?>" class="read-more"><?php _e( 'Read More', 'automech' ); ?></a>
+								<div class="col-md-6 col-sm-12 company-right">
+									<?php
+									$comp_logo = get_field( 'comp_logo' );
+					            	if ( ! empty( $comp_logo['url'] ) ) { ?>
+					                <div class="col-12 company-logo">
+						               <img src="<?php echo esc_url( $comp_logo['url'] ); ?>"
+					                                         alt="<?php echo esc_html( ( ! empty( $comp_logo['title'] ) ) ? $comp_logo['title'] : the_title() ); ?>"/>
+					                </div>
+					                <?php } ?>
+					                <div class="col-12 company-text">
+										<?php the_excerpt(); ?>
+									</div>
+									<div class="col-12 company-link">
+										<a href="<?php the_permalink(); ?>" class="read-more"><?php _e( 'Read More', 'automech' ); ?></a>
+									</div>
 								</div>
 							</div>
 						<?php endwhile; ?>
@@ -83,7 +81,8 @@
 						<p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'automech' ); ?></p>
 					<?php endif; ?>
 				</div>
-			</div>
+            </div>
+            <?php get_template_part( 'partials/article-footer' ); ?>
 		</div>
 	<?php endwhile; ?>
 <?php endif; ?>

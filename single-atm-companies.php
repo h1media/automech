@@ -34,7 +34,7 @@
                     </div>
                 </div>
 			<?php } ?>
-            <div class="row">
+            <div class="row article">
                 <div class="col-12">
 					<?php the_content(); ?>
                 </div>
@@ -70,7 +70,7 @@
 			<?php endif; ?>
 			<?php
 			if ( ! empty( $footer_text ) ) { ?>
-                <div class="row">
+                <div class="row article-footer">
                     <div class="col-12">
 						<?php echo wp_kses_post( $footer_text ); ?>
                     </div>

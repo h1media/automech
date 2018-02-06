@@ -24,11 +24,8 @@
 		<?php } ?>
         </div>
         <div class="container main-content">
-            <div class="row">
-                <div class="col-12">
-	                <?php the_content(); ?>
-                </div>
-            </div>
+			<?php get_template_part( 'partials/article-body' ); ?>
+			<?php get_template_part( 'partials/article-footer' ); ?>
         </div>
 	<?php endwhile; ?>
 <?php endif; ?>
