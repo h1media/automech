@@ -1,0 +1,20 @@
+body.home {
+
+  .header {
+    background: none;
+  }
+
+  .main-content {
+    margin-top:50px;
+
+    .featured {
+      margin-bottom: 0;
+      margin-top: 50px;
+    }
+
+    .article-home {
+      text-align: center;
+      border-bottom: 1px solid $red;
+    }
+  }
+}
