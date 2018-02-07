@@ -63,3 +63,5 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'   => false,
 	) );
 }
+// custom image sizes
+add_image_size( 'home-company', 515, 300, array( 'center', 'center' ));

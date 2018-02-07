@@ -70,12 +70,27 @@
 					$the_query = new WP_Query( $args ); ?>
 					<?php if ( $the_query->have_posts() ) : ?>
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12">
-
+                            <div class="row companies-entry">
+                                <div class="col-md-6 col-sm-12 entry-left">
+                                	<?php
+                                	$home_image = get_field( 'comp_home_image' );
+                                	$size = 'home-company';
+                                	if ( ! empty( $home_image['sizes'][ $size ] ) && ! empty( $home_image['title'] ) ) { ?>
+								        <img src="<?php echo esc_url( $home_image['url'] ); ?>" alt="<?php echo esc_html( $home_image['title'] ); ?>"/>
+									<?php } ?>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
-									<?php the_excerpt(); ?>
+                                <div class="col-md-6 col-sm-12 entry-right">
+                                	<?php
+                                	$atm_logo = get_field( 'atm_custom_logo' );
+                                	if ( ! empty( $atm_logo['url'] ) && ! empty( $atm_logo['title'] ) ) { ?>
+								        <img src="<?php echo esc_url( $atm_logo['url'] ); ?>" alt="<?php echo esc_html( $atm_logo['title'] ); ?>"/>
+									<?php } ?>
+									<?php
+									$home_comp = get_field( 'comp_home_text' );
+									if ( ! empty ( $home_comp ) ) { 
+										echo wp_kses_post( $home_comp );
+									}
+									?>
                                     <a href="<?php the_permalink(); ?>"
                                        class="read-more"><?php _e( 'Read More', 'automech' ); ?></a>
                                 </div>
