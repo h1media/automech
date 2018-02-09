@@ -71,35 +71,33 @@
 					<?php if ( $the_query->have_posts() ) : ?>
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post();
 							$company_color = get_field( 'comp_color' );
+							$company_color_back = get_field( 'comp_home_background' );
 							?>
                             <div class="row companies-entry"
 								<?php
 								if ( ! empty( $company_color ) ) {
 									?>
-                                    style="background-color:<?php echo $company_color; ?>;"
+                                    style="background-color:<?php echo $company_color_back; ?>;"
 									<?php
 								}
 								?>>
-                                <div class="col-md-6 col-sm-12 entry-left">
-									<?php
+								<?php
 									$attachment_id = get_field( 'comp_home_image' );
 									$home_image    = wp_get_attachment_image_src( $attachment_id, 'home-company' );
-									if ( ! empty ( $attachment_id ) ) {
-										?>
-                                        <img src="<?php echo $home_image[0]; ?>" alt="<?php the_title(); ?>"/>
-										<?php
-									}
-									?>
+								?>
+                                <div class="col-md-6 col-sm-12 entry-left" style="background-image:url(<?php echo esc_html( $home_image[0] ); ?>);">
                                 </div>
                                 <div class="col-md-6 col-sm-12 entry-right">
-									<?php
-									$atm_logo = get_field( 'atm_custom_logo' );
+									<div class="col-12 entry-logo">
+								    <a href="<?php the_permalink(); ?>">
+									<?php $atm_logo = get_field( 'atm_custom_logo' );
 									if ( ! empty( $atm_logo['url'] ) && ! empty( $atm_logo['title'] ) ) { ?>
-                                        <div class="col-12 entry-logo">
-                                            <img src="<?php echo esc_url( $atm_logo['url'] ); ?>"
-                                                 alt="<?php echo esc_html( $atm_logo['title'] ); ?>"/>
-                                        </div>
+								        <img src="<?php echo esc_url( $atm_logo['url'] ); ?>" alt="<?php echo esc_html( $atm_logo['title'] ); ?>"/>
+									<?php } elseif ( function_exists( 'the_custom_logo' ) ) { ?>
+										<?php the_custom_logo(); ?>
 									<?php } ?>
+								    </a>
+								    </div>
 									<?php
 									$home_comp = get_field( 'comp_home_text' );
 									if ( ! empty( $home_comp ) ) {
@@ -111,7 +109,8 @@
 									}
 									?>
                                     <a href="<?php the_permalink(); ?>"
-                                       class="read-more entry-link"><?php _e( 'Read More', 'automech' ); ?></a>
+                                       class="read-more entry-link"><?php _e( 'Read More', 'automech' ); ?> <span
+                class="fa fa-chevron-circle-right " aria-hidden="true" style="color:<?php echo esc_html( $company_color ); ?>;"></span></a>
                                 </div>
                             </div>
 						<?php endwhile; ?>

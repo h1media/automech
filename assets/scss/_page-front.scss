@@ -25,6 +25,8 @@ body.home {
 
       .entry-left {
         padding: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       .entry-right {
@@ -39,16 +41,8 @@ body.home {
           margin-bottom: 15px;
           text-transform: uppercase;
           font-weight: bold;
-          &:after {
-            content: '>';
-            border: #000000 solid 1px;
-            @include border-radius(50%);
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            text-align: center;
-            margin-left: 5px;
-            padding-top: -15px;
+          .fa {
+            font-size: rem(24);
           }
         }
       }

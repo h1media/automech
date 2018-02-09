@@ -15,6 +15,22 @@
     }
   }
   .article {
+    padding-bottom: 30px;
+    ul {
+      li {
+        font-family: 'Gotham';
+        font-size: rem(18);
+        line-height: rem(20);
+      }
+    }
+    h4 {
+      color: $red;
+      margin-bottom: 0;
+      font-size: rem(18);
+    }
+    strong {
+      font-family:'GothamMedium';
+    }
     .col-12 {
       @include no-column(2, 30px);
       p {
@@ -24,8 +40,23 @@
   }
 
   .article-body {
+     padding-bottom: 30px;
     .col-12 {
       @include no-column(2, 30px);
+      ul {
+        li {
+          font-family: 'Gotham';
+          font-size: rem(18);
+          line-height: rem(20);
+        }
+      }
+      h4 {
+        margin-bottom: 0;
+        font-size: rem(18);
+      }
+      strong {
+        font-family:'GothamMedium';
+      }
     }
   }
 
@@ -40,7 +71,17 @@
       margin-top: 20px;
       font-family:"Gotham";
       font-size: rem(28);
+      line-height: rem(34);
       text-transform: uppercase;
+      a {
+        text-decoration: underline;
+      }
+      strong {
+        font-family:'GothamMedium';
+      }
     }
+  }
+  .article-footer.comp {
+    text-transform: none!important;
   }
 }

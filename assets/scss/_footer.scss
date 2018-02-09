@@ -2,7 +2,7 @@ footer {
 
   .footer {
     background-color: $mainGrey;
-    font-size: rem(12);
+    font-size: rem(11);
     font-family: "GothamBook";
     min-height: 55px;
     text-transform: uppercase;
@@ -29,6 +29,16 @@ footer {
           display: inline-block;
           text-transform: uppercase;
           margin-right: 27px;
+          a {
+            font-weight: normal;
+          }
+        }
+        .menu-item-167:after {
+            font-family: FontAwesome;
+            content: "\f02f";
+            margin-left: 8px;
+            color: $red;
+            font-size: rem(18);
         }
       }
     }

@@ -3,6 +3,8 @@
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
 		<?php $backgroundimg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+		$company_color = get_field( 'comp_color' );
+		$comp_sub_background = get_field( 'comp_sub_background' );
 		if ( ! empty( $backgroundimg[0] ) ) { ?>
             <div class="container-fluid header" style="background: url('<?php echo esc_url( $backgroundimg[0] ); ?>');">
 		<?php } else { ?>
@@ -14,8 +16,42 @@
 				<?php get_template_part( 'partials/header-social' ); ?>
             </div>
         </div>
-		<?php get_template_part( 'partials/header-menu' ); ?>
-		<?php get_template_part( 'partials/header-subtitle' ); ?>
+		<div class="mobile-nav menu-holder">
+		<style type="text/css">
+			ul.sub-menu {background-color: <?php echo $company_color; ?>!important;}
+			h4 {color: <?php echo $company_color; ?>!important;}
+			.featured {border-bottom: 1px solid <?php echo $company_color; ?>!important;}
+			.article-footer {border-top: 1px solid <?php echo $company_color; ?>!important;}
+			.article-body {border-bottom: 1px solid <?php echo $company_color; ?>!important;}
+		</style>
+		    <div id="nav-icon1">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		    </div>
+		    <div class="responsive-menu" <?php
+								if ( ! empty( $company_color ) ) {
+									?>
+                                    style="background-color:<?php echo $company_color; ?>;"
+									<?php
+								}
+								?>>
+				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+		    </div>
+		</div>
+		<?php
+		$sub_title = get_field( 'atm_sub_title' );
+		if ( ! empty( $sub_title ) ) { ?>
+			<span class="header-title" <?php
+								if ( ! empty( $company_color ) ) {
+									?>
+                                    style="background-color:<?php echo $comp_sub_background; ?>;"
+									<?php
+								}
+								?>>
+				<?php echo wp_kses_post( $sub_title ); ?>
+			</span>
+		<?php } ?>
         </div>
         <div class="container main-content single-company">
 			<?php
@@ -23,7 +59,7 @@
 			if ( ! empty( $featured_text ) ) { ?>
                 <div class="row featured">
                     <div class="col-12">
-						<?php echo esc_html( $featured_text ); ?>
+						<?php echo wp_kses_post( $featured_text ); ?>
                     </div>
                 </div>
 			<?php } ?>
@@ -35,6 +71,9 @@
 			<?php
 			if ( have_rows( 'comp_areas_expertise' ) ) : ?>
                 <div class="row expertise">
+	                    <div class="col-12">
+							<p>OUR AREAS OF EXPERTISE</p>
+	                    </div>
 					<?php while ( have_rows( 'comp_areas_expertise' ) ) : the_row(); ?>
                         <div class="col-lg-2 col-md-4 col-sm-12 expertise-column">
 							<?php
@@ -64,7 +103,7 @@
 			<?php
 			$footer_text   = get_field( 'comp_footer' );
 			if ( ! empty( $footer_text ) ) { ?>
-                <div class="row article-footer">
+                <div class="row article-footer comp">
                     <div class="col-12">
 						<?php echo wp_kses_post( $footer_text ); ?>
                     </div>
