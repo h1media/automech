@@ -40,7 +40,7 @@
             .article-body {
                 border-bottom: 1px solid <?php echo $company_color; ?> !important;
             }
-            .expertise-column ul li:before {
+            .expertise-column ul li:before, .article-body ul li:before {
                 color: <?php echo $company_color; ?>;
             }
         </style>
