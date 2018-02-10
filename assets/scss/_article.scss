@@ -1,0 +1,131 @@
+.main-content {
+
+  .featured {
+    text-align: center;
+    @include featured;
+    text-transform: uppercase;
+    margin: 30px -15px;
+    border-bottom: 1px solid $red;
+    padding-bottom: 30px;
+
+    p {
+      font-size: rem(28);
+      line-height: rem(36);
+    }
+  }
+  .article {
+    padding-bottom: 30px;
+    ul {
+      li {
+        font-family: 'Gotham';
+        font-size: rem(18);
+        line-height: rem(20);
+      }
+    }
+    h4 {
+      color: $red;
+      margin-bottom: 0;
+      font-size: rem(18);
+    }
+    strong {
+      font-weight: 500;
+    }
+    .col-12 {
+      @include no-column(2, 30px);
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .article-body {
+    padding-bottom: 30px;
+    .col-12 {
+      @include no-column(2, 30px);
+      ul {
+        @include base-font;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+          &:before {
+            @include list-style;
+          }
+        }
+      }
+      h4 {
+        margin-bottom: 0;
+        font-size: rem(18);
+      }
+      strong {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .expertise {
+
+    .expertise-heading {
+      @include featured;
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 30px 0;
+
+    }
+
+    .expertise-column {
+      h4 {
+        line-height: rem(20);
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include base-font;
+        li {
+          padding-left: 13px;
+          &:before {
+            @include list-style;
+            margin-left: -13px;
+          }
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .col-lg-2.expertise-column {
+      flex: 0 0 20%;
+      max-width: 20%;
+      padding: 0;
+    }
+  }
+  .article-footer.comp {
+    p {
+      text-transform: none;
+      padding: 0 150px;
+    }
+  }
+  .article-footer {
+    text-align: center;
+    border-top: 1px solid $red;
+    padding: 30px 0;
+    @include featured;
+    text-transform: uppercase;
+    p {
+      margin-top: 20px;
+      @include featured;
+      text-transform: uppercase;
+      a {
+        text-decoration: underline;
+      }
+      strong {
+        font-weight: 500;
+      }
+    }
+  }
+}
