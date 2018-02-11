@@ -1,0 +1,25 @@
+.wpcf7 {
+
+	input[type=text], input[type=email], textarea {
+		width: 100%;
+		padding: 15px;
+		background:$mainGrey;
+		border:none;
+	}
+
+	input[type=file] {
+		visibility: hidden;
+		&:before {
+			content:'test';
+			display: inline-block;
+			width:100px;
+			height:100px;
+		}
+	}
+
+	.row {
+		margin-bottom: 20px;
+	}
+
+	@include base-font;
+}

@@ -15,15 +15,20 @@
   }
   .article {
     padding-bottom: 30px;
+    a {
+      text-decoration: underline;
+    }
     ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
+      margin-bottom: rem(16);
       @include base-font;
       li {
         padding-left: 13px;
         &:before {
           @include list-style;
+          color: $red;
           margin-left: -13px;
         }
       }
@@ -46,6 +51,9 @@
 
   .article-body {
     padding-bottom: 30px;
+    a {
+      text-decoration: underline;
+    }
     .col-12 {
       @include no-column(2, 30px);
       ul {
@@ -132,6 +140,13 @@
       strong {
         font-weight: 500;
       }
+    }
+  }
+}
+.main-content.1-column {
+  .article {
+    .col-12 {
+      @include no-column(1, 0px);
     }
   }
 }

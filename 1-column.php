@@ -1,3 +1,10 @@
+<?php 
+/**
+ * Template Name: 1 column
+ *
+ */
+?>
+
 <?php get_header(); ?>
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : ?>
@@ -17,7 +24,7 @@
 		<?php get_template_part( 'partials/header-menu' ); ?>
 		<?php get_template_part( 'partials/header-subtitle' ); ?>
         </div>
-        <div class="container main-content">
+        <div class="container main-content 1-column">
 			<?php
 			$featured_text = get_field( 'atm_featured_text' );
 			if ( ! empty( $featured_text ) ) {
