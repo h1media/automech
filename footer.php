@@ -11,8 +11,8 @@
         <div class="container-fluid footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 left">
-						<?php get_template_part( 'partials/social' ); ?>
+                    <div class="col-lg-6 col-md-12 left">
+						<?php get_template_part( 'partials/footer-social' ); ?>
 						<?php
 						$copyright = get_field( 'atm_copyright', 'options' );
 						if ( ! empty( $copyright ) ) {
@@ -22,7 +22,7 @@
 						}
 						?>
                     </div>
-                    <div class="col-md-6 col-sm-12 right">
+                    <div class="col-lg-6 col-md-12 right">
                         <nav class="menu-holder">
 							<?php wp_nav_menu( array( 'theme_location' => 'extra-menu' ) ); ?>
                         </nav>

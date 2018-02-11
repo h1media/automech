@@ -14,7 +14,7 @@ footer {
           margin-right: 27px;
           color: $red;
           font-size: rem(18);
-          @include sm() {
+          @include tablet() {
             margin: 0 10px;
           }
         }
@@ -22,33 +22,43 @@ footer {
           vertical-align: middle;
         }
       }
-      @include sm() {
+      @include tablet() {
         text-align: center;
       }
       .copyright {
-        @include sm() {
+        @include tablet() {
           width: 100%;
           display: block;
           text-align: center;
           padding: 10px;
+          margin: 0 10px;
         }
       }
     }
 
     .menu-bottom-menu-container {
       float: right;
+      @include tablet() {
+        float: none;
+      }
       ul {
         margin: 0;
         padding: 0;
         list-style: none;
-        @include sm() {
+        @include tablet() {
           text-align: center;
+          margin-right: 0;
+          margin: 0 10px;
         }
         li {
           list-style-type: none;
           display: inline-block;
           text-transform: uppercase;
           margin-right: 27px;
+          @include tablet() {
+            margin-right: 0;
+            margin: 0 10px;
+          }
           &:last-of-type {
             &:after {
               font-family: FontAwesome;

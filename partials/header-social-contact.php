@@ -3,6 +3,11 @@
 	$facebook = get_field( 'atm_facebook', 'options' );
 	$twitter  = get_field( 'atm_twitter', 'options' );
 	$linkedin  = get_field( 'atm_linkedin', 'options' );
+	$contact_text  = get_field( 'atm_contact_text', 'options' );
+	$contact_url  = get_field( 'atm_contact_url', 'options' );
+	if ( ! empty( $contact_text ) && ! empty( $contact_url ) ) { ?>
+	    <a class="contact-us-button" href="<?php echo esc_url( $contact_url ); ?>" rel="nofollow"><?php echo esc_html( $contact_text ); ?></a>
+	<?php }
 	if ( ! empty( $facebook ) ) { ?>
 	    <a class="social" href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="nofollow"><span
 	                class="fa fa-facebook" aria-hidden="true"></span></a>

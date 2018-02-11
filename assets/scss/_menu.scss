@@ -76,7 +76,7 @@
       position: absolute;
       height: 5px;
       width: 100%;
-      background: #434343;
+      background: #fff;
       border-radius: 5px;
       opacity: 1;
       left: 0;
@@ -123,9 +123,10 @@
   #nav-icon1 {
     position: absolute;
     right: 0;
-    top: 28px;
+    top: 18px;
     display: block!important;
     right: 15px;
+    z-index: 99999;
   }
   .responsive-menu {
     display: none!important;
@@ -134,14 +135,24 @@
       background: white;
       ul  {
         width: 100%;
+        margin:0;
+        padding: 20px 0;
+        background:$red;
+        position: absolute;
+        top: 0;
+        z-index: 9999;
       }
       li {
         width: 100%;
+        ul.sub-menu {
+          background-color: black;
+        }
       }
       a {
         width: 100%;
-        padding: 15px 0!important;
+        padding: 7px 0!important;
         text-align: center;
+        color: white;
       }
     }
   }
@@ -149,10 +160,12 @@
     display: none;
     position: absolute;
     right: 0;
-    padding: 0 20px;
+    padding: 0 23px;
     top:0;
     cursor: pointer;
-    color: black!important;
+    color: white!important;
+    font-size: rem(22);
+    font-weight: bold;
   }
 
   li .sub-menu{

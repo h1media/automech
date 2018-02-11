@@ -1,17 +1,10 @@
 .contact {
 	.col-12 {	
 		@include no-column(1!important, 0px!important);
-		table {
-			@include base-font;
-			width:100%;
-			img {
-				max-width: 60%;
-				height: auto;
-				margin-bottom: 20px;
-			}
-			td {
-				padding-bottom: 50px;
-			}
-		}
+	}
+}
+.page-id-48 {
+	p {
+		margin-bottom: 50px;
 	}
 }

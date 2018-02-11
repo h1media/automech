@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
 				<?php get_template_part( 'partials/header-logo' ); ?>
-				<?php get_template_part( 'partials/header-social' ); ?>
+				<?php get_template_part( 'partials/header-social-contact' ); ?>
             </div>
         </div>
         <div class="mobile-nav menu-holder">

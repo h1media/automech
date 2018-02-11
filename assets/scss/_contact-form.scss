@@ -2,6 +2,9 @@
 
 	.label-area {
 		text-align: right;
+		@include sm() {
+	    	text-align: center;
+	    }
 
 		label {
 			padding-top: 25px;
@@ -35,6 +38,9 @@
 
 	.submit-area {
 		text-align: right;
+		@include sm() {
+	    	text-align: center;
+	    }
 
 		.ajax-loader {
 			margin-right: -16px;
@@ -42,6 +48,10 @@
 
 		.wpcf7-form-control-wrap {
 			margin-left: 50px;
+			@include sm() {
+		    	margin-left: 0;
+		    	margin-bottom: 30px;
+		    }
 		}
 	}
 

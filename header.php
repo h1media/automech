@@ -21,7 +21,7 @@
 	if ( is_singular( 'atm-companies' ) && ! empty( $company_color ) ) {
 		?>
         <style type="text/css">
-            ul.sub-menu {
+            ul.sub-menu, .responsive-menu .menu-header-menu-container ul {
                 background-color: <?php echo $company_color; ?> !important;
             }
 
@@ -42,6 +42,9 @@
             }
             .expertise-column ul li:before, .article-body ul li:before {
                 color: <?php echo $company_color; ?>;
+            }
+            .header .social-top a.social:hover {
+                color: <?php echo $company_color; ?> !important;
             }
         </style>
 		<?php
