@@ -1,4 +1,4 @@
-<div class="col-lg-6 col-md-12 logo">
+<div class="col-md-6 col-sm-12 logo">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<?php $atm_logo = get_field( 'atm_custom_logo' );
 	if ( ! empty( $atm_logo['url'] ) && ! empty( $atm_logo['title'] ) ) { ?>

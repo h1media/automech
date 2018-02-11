@@ -9,6 +9,9 @@
         position: relative;
         line-height: 30px;
         padding: 0 15px;
+        @include tablet() {
+          padding: 0 10px;
+        }
         a {
           font-family:'GothamBook';
           font-size: rem(14);
@@ -32,7 +35,7 @@
           left: 0;
           z-index: 999;
           padding: 0;
-          @include tablet() {
+          @include sm() {
             position: relative!important;
             visibility: visible!important;
           }
@@ -55,6 +58,9 @@
       }
       li:hover > ul {
         visibility: visible;
+      }
+      li.current-menu-item > a {
+        font-weight: 900;
       }
     }
   }
@@ -109,7 +115,7 @@
   }
 }
 
-@include tablet() {
+@include sm() {
   #menu-main-menu {
     padding: 0;
     margin:0;

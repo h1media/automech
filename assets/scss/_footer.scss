@@ -14,9 +14,23 @@ footer {
           margin-right: 27px;
           color: $red;
           font-size: rem(18);
+          @include sm() {
+            margin: 0 10px;
+          }
         }
         .fa {
           vertical-align: middle;
+        }
+      }
+      @include sm() {
+        text-align: center;
+      }
+      .copyright {
+        @include sm() {
+          width: 100%;
+          display: block;
+          text-align: center;
+          padding: 10px;
         }
       }
     }
@@ -27,6 +41,9 @@ footer {
         margin: 0;
         padding: 0;
         list-style: none;
+        @include sm() {
+          text-align: center;
+        }
         li {
           list-style-type: none;
           display: inline-block;

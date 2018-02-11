@@ -14,10 +14,16 @@
       max-width: 100%;
       height: auto;
     }
+    @include sm() {
+      text-align: center;
+    }
   }
   .social-top {
     display: block;
     text-align: right;
+    @include sm() {
+      text-align: center;
+    }
     a {
       display: inline-block;
       height: 30px;

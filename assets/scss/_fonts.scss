@@ -44,6 +44,10 @@ p {
   font-size: rem(18);
   line-height: rem(20);
   font-family: 'Gotham';
+  @include sm() {
+    font-size: rem(16);
+    line-height: rem(18);
+  }
 }
 
 h1 {

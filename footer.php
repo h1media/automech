@@ -17,7 +17,7 @@
 						$copyright = get_field( 'atm_copyright', 'options' );
 						if ( ! empty( $copyright ) ) {
 							?>
-                            <span><?php echo esc_html( $copyright ); ?></span>
+                            <span class="copyright"><?php echo esc_html( $copyright ); ?></span>
 							<?php
 						}
 						?>

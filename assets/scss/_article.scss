@@ -1,5 +1,10 @@
 .main-content {
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .featured {
     text-align: center;
     @include featured;
@@ -7,10 +12,13 @@
     margin: 30px -15px;
     border-bottom: 1px solid $red;
     padding-bottom: 30px;
-
     p {
       font-size: rem(28);
       line-height: rem(36);
+      @include sm() {
+        font-size: rem(22);
+        line-height: rem(26);
+      }
     }
   }
   .article {
@@ -46,6 +54,9 @@
       p {
         margin-top: 0;
       }
+      @include sm {
+        @include no-column(1, 0px);
+      }
     }
   }
 
@@ -73,6 +84,9 @@
       }
       strong {
         font-weight: 500;
+      }
+            @include sm {
+        @include no-column(1, 0px);
       }
     }
   }
@@ -117,6 +131,14 @@
       flex: 0 0 20%;
       max-width: 20%;
       padding: 0;
+      @include tablet {
+        flex: 0 0 33.333333%!important;
+        max-width: 33.333333%!important;
+      }
+      @include sm {
+        flex: 0 0 50%!important;
+        max-width: 50%!important;
+      }
     }
   }
   .article-footer.comp {

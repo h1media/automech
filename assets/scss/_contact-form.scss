@@ -1,24 +1,48 @@
 .wpcf7 {
 
+	.label-area {
+		text-align: right;
+
+		label {
+			padding-top: 25px;
+		}
+	}
+
 	input[type=text], input[type=email], textarea {
 		width: 100%;
-		padding: 15px;
+		padding: 25px;
 		background:$mainGrey;
 		border:none;
 	}
 
 	input[type=file] {
-		visibility: hidden;
-		&:before {
-			content:'test';
-			display: inline-block;
-			width:100px;
-			height:100px;
-		}
+		background: url('../images/attachment.jpg');
+		display: inline-block;
+		width:40px;
+		height:40px;
+		vertical-align: middle;
+		text-indent: -9999px;
+		text-transform: uppercase;
+	}
+
+	input[type=submit] {
+		@include button;
 	}
 
 	.row {
-		margin-bottom: 20px;
+		margin-bottom: 25px;
+	}
+
+	.submit-area {
+		text-align: right;
+
+		.ajax-loader {
+			margin-right: -16px;
+		}
+
+		.wpcf7-form-control-wrap {
+			margin-left: 50px;
+		}
 	}
 
 	@include base-font;

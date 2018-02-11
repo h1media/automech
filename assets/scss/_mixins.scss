@@ -30,6 +30,12 @@
   }
 }
 
+@mixin tablet {
+  @media only screen and (max-width: $md) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media only screen and (max-width: $sm) {
     @content;
@@ -101,6 +107,10 @@
   font-family:"Gotham";
   font-size: rem(28);
   line-height: rem(34);
+  @include sm() {
+    font-size: rem(22);
+    line-height: rem(26);
+  }
 }
 
 @mixin list-style() {
@@ -108,4 +118,14 @@
   padding-right: 5px;
   font-weight: 500;
   font-size: rem(20);
+}
+@mixin button {
+  background: $red;
+  color: white;
+  padding: 30px 60px;
+  text-transform: uppercase;
+  border:none;
+  outline: 0;
+  cursor: pointer;
+  font-size: rem(24);
 }

@@ -22,11 +22,18 @@ body.home {
     .companies-entry {
       margin:0 30px;
       margin-bottom: 40px;
+      @include tablet {
+        margin:0;
+        margin-bottom: 40px;
+      }
 
       .entry-left {
         padding: 0;
         background-repeat: no-repeat;
         background-size: cover;
+        @include sm() {
+          min-height: 200px;
+        }
       }
 
       .entry-right {

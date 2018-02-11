@@ -173,4 +173,15 @@
     $(window).on("resize.slickVideoPlayer", function(){
         resizePlayer(iframes, 16/9);
     });
+
+// home same size boxes
+
+    var highestBox = 0;
+    jQuery('.companies-entry').each(function() {
+        if (jQuery(this).height() > highestBox) {
+            highestBox = jQuery(this).height();
+        }
+    });
+    jQuery('.companies-entry').css("min-height", highestBox + "px");
+
 })(jQuery);
