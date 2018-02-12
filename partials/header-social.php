@@ -1,4 +1,4 @@
-<div class="col-md-6 col-sm-12 social-top">
+<div class="col-md-6 col-sm-12 social-top no-print">
 	<?php
 	$facebook = get_field( 'atm_facebook', 'options' );
 	$twitter  = get_field( 'atm_twitter', 'options' );

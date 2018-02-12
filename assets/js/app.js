@@ -184,4 +184,17 @@
     });
     jQuery('.companies-entry').css("min-height", highestBox + "px");
 
+// ptint page
+$( '.print-this-page a' ).click(function(){
+    $("body").print({
+    addGlobalStyles : false,
+    stylesheet : null,
+    rejectWindow : true,
+    noPrintSelector : ".no-print",
+    iframe : false,
+    append : null,
+    prepend : null
+});
+    });
+
 })(jQuery);

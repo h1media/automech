@@ -50,6 +50,7 @@
 		<?php
 	}
 	?>
+    <link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/print.css" />
 
 	<?php wp_head(); ?>
 </head>
