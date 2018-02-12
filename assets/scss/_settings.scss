@@ -1,0 +1,30 @@
+$nearBlack: #313112;
+$red: #e30613;
+$mainGrey: #bfc5ca;
+
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+
+$base-font-size: 16;
+
+@function calc-rem($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+
+@function rem($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/fontawesome-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/fontawesome-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}

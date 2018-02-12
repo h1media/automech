@@ -1,0 +1,10 @@
+.contact {
+  .col-12 {
+    @include no-column(1!important, 0px!important);
+  }
+}
+.page-id-48 {
+  p {
+    margin-bottom: 50px;
+  }
+}

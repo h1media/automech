@@ -1,0 +1,95 @@
+@font-face {
+  font-family:'Gotham';
+  src:url('../fonts/GothamMedium.eot');
+  src:url('../fonts/GothamMedium.eot?#iefix') format("embedded-opentype"),
+  url('../fonts/GothamMedium.woff2') format("woff2"),
+  url('../fonts/GothamMedium.woff') format("woff"),
+  url('../fonts/GothamMedium.ttf') format("truetype");
+  font-weight:500;
+}
+@font-face {
+  font-family:'Gotham';
+  src:url('../fonts/Gotham-Light.eot');
+  src:url('../fonts/Gotham-Light.eot?#iefix') format("embedded-opentype"),
+  url('../fonts/Gotham-Light.woff2') format("woff2"),
+  url('../fonts/Gotham-Light.woff') format("woff"),
+  url('../fonts/Gotham-Light.ttf') format("truetype");
+  font-weight:300
+}
+@font-face{font-family:'GothamBook';
+  src:url('../fonts/Gotham-Book.eot');
+  src:url('../fonts/Gotham-Book.eot?#iefix') format("embedded-opentype"),
+  url('../fonts/Gotham-Book.woff2') format("woff2"),
+  url('../fonts/Gotham-Book.woff') format("woff"),
+  url('../fonts/Gotham-Book.ttf') format("truetype")
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-ExtraLight.eot');
+  src: url('../fonts/Gotham-ExtraLight.eot?#iefix') format("embedded-opentype"),
+  url('../fonts/Gotham-ExtraLight.woff2') format("woff2"),
+  url('../fonts/Gotham-ExtraLight.woff') format("woff"),
+  url('../fonts/Gotham-ExtraLight.ttf') format("truetype");
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-size: rem(18);
+  line-height: rem(20);
+  font-family: 'Gotham';
+  @include sm() {
+    font-size: rem(16);
+    line-height: rem(18);
+  }
+}
+
+h1 {
+  font-size: rem(33);
+  line-height: rem(33);
+  font-weight: 200;
+  margin: rem(20) 0 rem(20) 0;
+  font-family: 'Gotham';
+  &.b-bottom {
+    position: relative;
+
+    &:after {
+      content: ' ';
+      display: inline-block;
+      width: 200px;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      background: #398235;
+    }
+  }
+}
+
+h2 {
+  font-size: rem(26);
+  line-height: rem(32);
+  margin: rem(20) 0 rem(20) 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: rem(20);
+  line-height: rem(28);
+  color: $nearBlack;
+  margin: rem(20) 0 rem(20) 0;
+}
+
+h4 {
+  font-size: rem(16);
+  line-height: rem(30);
+  font-weight: bold;
+  color: $nearBlack;
+  margin: rem(20) 0 rem(20) 0;
+}

@@ -1,0 +1,79 @@
+footer {
+
+  .footer {
+    background-color: $mainGrey;
+    font-size: rem(11);
+    font-family: "GothamBook";
+    text-transform: uppercase;
+    padding: 20px 0;
+
+    .left {
+      padding-top: 2px;
+      a {
+        span {
+          margin-right: 27px;
+          color: $red;
+          font-size: rem(18);
+          @include tablet() {
+            margin: 0 10px;
+          }
+        }
+        .fa {
+          vertical-align: middle;
+        }
+      }
+      @include tablet() {
+        text-align: center;
+      }
+      .copyright {
+        @include tablet() {
+          width: 100%;
+          display: block;
+          text-align: center;
+          padding: 10px;
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .menu-bottom-menu-container {
+      float: right;
+      @include tablet() {
+        float: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include tablet() {
+          text-align: center;
+          margin-right: 0;
+          margin: 0 10px;
+        }
+        li {
+          list-style-type: none;
+          display: inline-block;
+          text-transform: uppercase;
+          margin-right: 27px;
+          @include tablet() {
+            margin-right: 0;
+            margin: 0 10px;
+          }
+          &:last-of-type {
+            &:after {
+              font-family: FontAwesome;
+              content: "\f02f";
+              margin-left: 8px;
+              color: $red;
+              font-size: rem(18);
+              vertical-align: middle;
+            }
+          }
+          a {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
