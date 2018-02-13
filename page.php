@@ -4,7 +4,7 @@
 		<?php the_post(); ?>
 		<?php $backgroundimg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 		if ( ! empty( $backgroundimg[0] ) ) { ?>
-            <div class="container-fluid header" style="background: url('<?php echo esc_url( $backgroundimg[0] ); ?>');">
+            <div class="container-fluid header" style="background: linear-gradient(175deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 25%), url('<?php echo esc_url( $backgroundimg[0] ); ?>');">
 		<?php } else { ?>
             <div class="container-fluid header no-bcg">
 		<?php } ?>

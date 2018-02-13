@@ -9,9 +9,8 @@
     text-align: center;
     @include featured;
     text-transform: uppercase;
-    margin: 30px -15px;
+    margin: 0px -15px 30px -15px;
     border-bottom: 1px solid $red;
-    padding-bottom: 30px;
     p {
       font-size: rem(28);
       line-height: rem(36);
@@ -99,7 +98,7 @@
       width: 100%;
       text-align: center;
       text-transform: uppercase;
-      padding: 30px 0;
+      padding: 15px 0;
 
     }
 
@@ -143,6 +142,7 @@
     }
   }
   .article-footer.comp {
+    padding-top: 15px;
     p {
       text-transform: none;
     }
@@ -150,7 +150,7 @@
   .article-footer {
     text-align: center;
     border-top: 1px solid $red;
-    padding: 30px 0;
+    padding: 30px 0 20px 0;
     @include featured;
     text-transform: uppercase;
     p {

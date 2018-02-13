@@ -68,3 +68,23 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 // custom image sizes
 add_image_size( 'home-company', 560, 300, array( 'center', 'center' ) );
 add_image_size( 'expertise-company', 260, 360, array( 'center', 'center' ) );
+
+//claen eneque
+add_filter( 'style_loader_tag',  'clean_style_tag'  );
+add_filter( 'script_loader_tag', 'clean_script_tag'  );
+
+//Clean up output of stylesheet <link> tags
+function clean_style_tag( $input ) {
+    preg_match_all( "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches );
+    if ( empty( $matches[2] ) ) {
+        return $input;
+    }
+    $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
+    return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
+}
+
+// Clean up output of <script> tags
+function clean_script_tag( $input ) {
+    $input = str_replace( "type='text/javascript' ", '', $input );
+    return str_replace( "'", '"', $input );
+}

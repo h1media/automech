@@ -4,7 +4,7 @@
   padding-top: 15px;
   position: relative;
   background: $mainGrey;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background-repeat: no-repeat!important;
   background-size: cover!important;
   background-position: center center!important;
@@ -71,8 +71,8 @@
     position: absolute;
     bottom:40px;
     right: 0;
-    font-size: rem(34);
-    line-height: rem(38);
+    font-size: rem(28);
+    line-height: rem(32);
     padding: 12px 25px;
     background: black;
     text-transform: uppercase;
@@ -80,10 +80,16 @@
     color: white;
     line-height: 33px;
     text-align: right;
+    @include sm() {
+      text-align: center;
+    }
     p{
       margin: 0;
-      font-size: rem(34);
-      line-height: rem(38);
+      font-size: rem(28);
+      line-height: rem(32);
+      @include sm() {
+        text-align: center;
+      }
       strong {
         font-weight: 500;
       }

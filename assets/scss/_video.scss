@@ -128,32 +128,33 @@ $link_hover_color: #fff;
   li {
     display: inline-block;
     vertical-align: top;
-    margin: 0 8px;
+    margin: 0 4px;
     button {
-      width: 16px;
-      height: 16px;
+      width: 13px!important;
+      height: 13px!important;
+      padding: 0!important;
+      margin-top: -10px;
       border: none;
       cursor: pointer;
       border-radius: 50%;
-      border: 2px solid #fff;
+      border: 1px solid #2e4152;
       box-shadow: 0 0 0 0 transparent;
       vertical-align: middle;
       color: #fff;
-      background-color: #ccc;
+      background-color: #fff;
       text-indent: -9999px;
       transition:all .3s ease;
-      opacity: .4;
       &:focus {
         outline: none;
       }
       &:hover {
-        opacity: 1;
+        background: #445565;
       }
     }
     &.slick-active {
       button {
         box-shadow: 0 0 0 2px #fff;
-        opacity: 1;
+        background: #445565;
       }
     }
   }
